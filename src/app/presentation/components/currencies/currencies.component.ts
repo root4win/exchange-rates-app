@@ -7,12 +7,12 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-currencies-dropdown',
   imports: [ KENDO_DROPDOWNLIST, FormsModule ],
-  templateUrl: './currencies-dropdown.component.html',
-  styleUrl: './currencies-dropdown.component.scss',
+  templateUrl: './currencies.component.html',
+  styleUrls: ['./currencies.component.scss'],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CurrenciesDropdownComponent implements OnInit {
+export class CurrenciesComponent implements OnInit {
   currenciesList:  CurrencyResponse | null = null;
   currencyData: Array<{text: string, value: string}> = [];
 
