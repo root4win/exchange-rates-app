@@ -1,0 +1,57 @@
+<div class="container-currency">
+
+  <section class="amount">
+    <div class="input-group input-group-sm mb-3">
+      <span class="input-group-text" id="inputGroup-sizing-sm">Amount</span>
+      <input
+       type="number"
+       class="form-control"
+       aria-label="Sizing example input"
+       aria-describedby="inputGroup-sizing-sm"
+      [(ngModel)]="currencyAmount"
+       >
+    </div>
+  </section>
+
+  <div class="currency-conversion">
+    <div class="from-currency">
+      <label for="">From</label>
+      <kendo-dropdownlist
+      [className]="'from-currency'"
+      [data]="currencyData"
+      [virtual]="{ itemHeight: 28 }"
+      textField="text"
+      valueField="value"
+      [filterable]="true"
+      [(ngModel)] = "fromCurrency"
+      (valueChange)="onFromChange($event)"
+      placeholder="Select a currency...">
+      </kendo-dropdownlist>
+    </div>
+
+  <div class="swap-currency">
+    <button class="btn btn-outline-success" (click)="swapCurrencies()">
+      <i class="bi bi-arrow-left-right"></i>
+    </button>
+  </div>
+
+  <div class="to-currency">
+    <label>To</label>
+    <kendo-dropdownlist
+    [className]="'to-currency'"
+    [data]="currencyData"
+    [virtual]="{ itemHeight: 28 }"
+    textField="text"
+    valueField="value"
+    [filterable]="true"
+    [(ngModel)] = "toCurrency"
+    (valueChange)="onToChange($event)"
+    placeholder="Select a currency...">
+    </kendo-dropdownlist>
+  </div>
+</div>
+
+  <button class="btn btn-outline-success" type="button" (click)="onConvertion()">
+    Convert
+  </button>
+</div>
